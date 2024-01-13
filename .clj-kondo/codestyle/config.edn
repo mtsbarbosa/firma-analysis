@@ -1,0 +1,19 @@
+{:skip-comments true
+ :lint-as       {clojure.test.check.clojure-test/defspec       clj-kondo.lint-as/def-catch-all
+                 clojure.test.check.properties/for-all         clojure.core/let
+                 schema.test/deftest                           clojure.test/deftest
+                 outpace.config/defconfig                      clojure.core/def
+                 io.pedestal.interceptor.error/error-dispatch clojure.core/let}
+ :linters       {:deprecated-var {:level :info}
+                 :refer-all {:exclude [matcher-combinators.test
+                                       clojure.test.check.clojure-test
+                                       clojure.test]}
+                 :unresolved-symbol {:exclude [(io.pedestal.interceptor.error/error-dispatch [exception])]}
+                 :clojure-lsp/unused-public-var {:exclude-regex ["firma-analysis.ports.sql.core/reset"
+                                                                 "firma-analysis.server/run-dev"
+                                                                 "firma-analysis.server/run-dev-w-migration"
+                                                                 "firma-analysis.ports.http-in.routes.core/json-public-interceptors"
+                                                                 "firma-analysis.ports.sql.repositories.events/find-all"]}}
+ :config-in-ns {user {:linters {:unused-referred-var {:level :off}
+                                :unused-namespace {:level :off}
+                                :refer-all {:level :off}}}}}

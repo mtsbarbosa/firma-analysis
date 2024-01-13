@@ -1,0 +1,15 @@
+{
+ firma-analysis.ports.sql.core/db-type                      "postgresql"
+ firma-analysis.ports.sql.core/host                         "0.0.0.0"
+ firma-analysis.ports.sql.core/port                         "5432"
+ firma-analysis.ports.sql.core/db-name                      "firma"
+ firma-analysis.ports.sql.core/username                     "admin"
+ firma-analysis.ports.sql.core/password                     "admin"
+ firma-analysis.configs/env                                 "dev"
+ firma-analysis.configs/user-passphrase                     "dobry den"
+ firma-analysis.configs/admin-passphrase                    "dobrou noc"
+ firma-analysis.ports.http-out.json-storage/bin-account-id  #config/env "JSON_STORAGE_BIN_ACC_ID"
+ firma-analysis.ports.http-out.json-storage/events-bin-id   #config/env "JSON_STORAGE_EVENTS_BIN_ID"
+ firma-analysis.ports.http-out.json-storage/part-bin-id     #config/env "JSON_STORAGE_PART_BIN_ID"
+ firma-analysis.ports.http-out.json-storage/api-key         #config/env "JSON_STORAGE_API_KEY"
+ }

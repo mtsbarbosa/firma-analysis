@@ -1,0 +1,7 @@
+{
+ firma-analysis.ports.sql.core/db-type      "h2:mem"
+ firma-analysis.ports.sql.core/db-name      "firma;MODE=PostgreSQL"
+ firma-analysis.configs/env                 "test"
+ firma-analysis.configs/user-passphrase     "dobry den"
+ firma-analysis.configs/admin-passphrase    "dobrou noc"
+ }
