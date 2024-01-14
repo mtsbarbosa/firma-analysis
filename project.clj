@@ -1,4 +1,4 @@
-(defproject org.clojars.mtsbarbosa/firma-analysis "0.0.2"
+(defproject org.clojars.mtsbarbosa/firma-analysis "0.0.3"
             :description "FIXME: write description"
             :url "http://example.com/FIXME"
             :license {:name "MIT License"
@@ -39,5 +39,5 @@
                                              [com.h2database/h2 "2.2.224"]
                                              [nubank/matcher-combinators "3.8.8"]]
                               :jvm-opts ["-Dresource.config.edn=test-config.edn"]}
-                       :uberjar {:main ^{:skip-aot true} [firma-analysis.server]}}
+                       :uberjar {:aot :all}}
             :main ^{:skip-aot true} firma-analysis.server)

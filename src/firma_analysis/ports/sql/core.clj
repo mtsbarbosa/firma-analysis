@@ -13,14 +13,14 @@
             Time
             Timestamp]))
 
-(defconfig db-type)
-(defconfig subname)
-(defconfig subprotocol)
-(defconfig host)
-(defconfig port)
-(defconfig db-name)
-(defconfig username)
-(defconfig password)
+(defconfig db-type "h2:mem")
+(defconfig subname "")
+(defconfig subprotocol "")
+(defconfig host "")
+(defconfig port "")
+(defconfig db-name "firma;MODE=PostgreSQL")
+(defconfig username "")
+(defconfig password "")
 
 (def raw-connection
   {:dbtype db-type
