@@ -6,3 +6,4 @@
 
 
 lein deploy clojars
+lein deploy-uberjar

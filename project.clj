@@ -1,4 +1,4 @@
-(defproject org.clojars.mtsbarbosa/firma-analysis "0.0.4"
+(defproject org.clojars.mtsbarbosa/firma-analysis "0.0.5"
             :description "FIXME: write description"
             :url "http://example.com/FIXME"
             :license {:name "MIT License"
@@ -17,7 +17,7 @@
                            [org.slf4j/jcl-over-slf4j "2.0.9"]
                            [org.slf4j/log4j-over-slf4j "2.0.9"]
                            [http-kit "2.8.0-beta3"]]
-            :plugins [[camechis/deploy-uberjar "0.3.0"]]
+            :plugins [[lein-deploy-uberjar "2.0.0"]]
             :min-lein-version "2.0.0"
             :aliases {"config" ["run" "-m" "outpace.config.generate"]
                       "migrate" ["run" "-m" "firma-analysis.ports.sql.core/migrate"]
@@ -31,8 +31,7 @@
             :resource-paths ["config", "resources"]
             :jvm-opts ["-Dresource.config.edn=app-config.edn"
                        "-Duser.timezone=America/Sao_Paulo"]
-            :profiles {:dev {:plugins [[com.github.clojure-lsp/lein-clojure-lsp "1.3.17"]]
-                             :aliases {"run-dev"              ["trampoline" "run" "-m" "firma-analysis.server/run-dev"]
+            :profiles {:dev {:aliases {"run-dev"              ["trampoline" "run" "-m" "firma-analysis.server/run-dev"]
                                        "run-dev-w-migration"  ["trampoline" "run" "-m" "firma-analysis.server/run-dev-w-migration"]}
                              :dependencies [[io.pedestal/pedestal.service-tools "0.6.3"]]
                              :jvm-opts ["-Dresource.config.edn=dev-config.edn"]}
