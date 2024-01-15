@@ -1,4 +1,4 @@
-(defproject org.clojars.mtsbarbosa/firma-analysis "0.0.6"
+(defproject org.clojars.mtsbarbosa/firma-analysis "0.0.7"
             :description "FIXME: write description"
             :url "http://example.com/FIXME"
             :license {:name "MIT License"
