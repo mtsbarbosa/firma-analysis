@@ -1,4 +1,4 @@
-(defproject org.clojars.mtsbarbosa/firma-analysis "0.0.5"
+(defproject org.clojars.mtsbarbosa/firma-analysis "0.0.6"
             :description "FIXME: write description"
             :url "http://example.com/FIXME"
             :license {:name "MIT License"
@@ -17,7 +17,6 @@
                            [org.slf4j/jcl-over-slf4j "2.0.9"]
                            [org.slf4j/log4j-over-slf4j "2.0.9"]
                            [http-kit "2.8.0-beta3"]]
-            :plugins [[lein-deploy-uberjar "2.0.0"]]
             :min-lein-version "2.0.0"
             :aliases {"config" ["run" "-m" "outpace.config.generate"]
                       "migrate" ["run" "-m" "firma-analysis.ports.sql.core/migrate"]
