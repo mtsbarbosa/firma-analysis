@@ -10,6 +10,9 @@
 
               ::http/type :jetty
               ::http/port 8080
+              ::http/host (if (= :prod (keyword (or configs/env "dev")))
+                            "0.0.0.0"
+                            "localhost")
               ::http/container-options {:h2c? true
                                         :h2? false
                                         :ssl? false}})

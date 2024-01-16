@@ -6,3 +6,4 @@
 
 
 lein deploy clojars
+lein with-profile uberjar deploy clojars org.clojars.mtsbarbosa/firma-analysis ? firma-analysis-?-standalone.jar pom.xml

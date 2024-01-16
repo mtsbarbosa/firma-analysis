@@ -1,4 +1,4 @@
-(defproject org.clojars.mtsbarbosa/firma-analysis "0.0.7"
+(defproject org.clojars.mtsbarbosa/firma-analysis "0.0.9"
             :description "FIXME: write description"
             :url "http://example.com/FIXME"
             :license {:name "MIT License"
@@ -32,6 +32,7 @@
                        "-Duser.timezone=America/Sao_Paulo"]
             :profiles {:dev {:aliases {"run-dev"              ["trampoline" "run" "-m" "firma-analysis.server/run-dev"]
                                        "run-dev-w-migration"  ["trampoline" "run" "-m" "firma-analysis.server/run-dev-w-migration"]}
+                             :plugins [[com.github.clojure-lsp/lein-clojure-lsp "1.3.17"]]
                              :dependencies [[io.pedestal/pedestal.service-tools "0.6.3"]]
                              :jvm-opts ["-Dresource.config.edn=dev-config.edn"]}
                        :test {:dependencies [[io.pedestal/pedestal.service-tools "0.6.3"]
