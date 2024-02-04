@@ -4,6 +4,11 @@
 `JSON_STORAGE_BIN_ACC_ID=<?> JSON_STORAGE_EVENTS_BIN_ID=<?> JSON_STORAGE_PART_BIN_ID=<?> JSON_STORAGE_API_KEY=<?> lein with-profile dev run`
 `curl -X POST -H "Content-Type: application/json" -H "x-token: dobrou noc" http://localhost:8080/ingest`
 
-
+## deploy
 lein deploy clojars
 lein with-profile uberjar deploy clojars org.clojars.mtsbarbosa/firma-analysis ? firma-analysis-?-standalone.jar pom.xml
+
+## local test with jar
+lein uberjar
+mv target/firma-analysis-?-standalone.jar target/firma-analysis.jar
+JSON_STORAGE_BIN_ACC_ID=? JSON_STORAGE_EVENTS_BIN_ID=? JSON_STORAGE_PART_BIN_ID=? JSON_STORAGE_API_KEY=? java -Dresource.config.edn=dev-config.edn -jar target/firma-analysis.jar

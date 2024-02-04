@@ -1,4 +1,4 @@
-(defproject org.clojars.mtsbarbosa/firma-analysis "0.0.9"
+(defproject org.clojars.mtsbarbosa/firma-analysis "0.0.17"
             :description "FIXME: write description"
             :url "http://example.com/FIXME"
             :license {:name "MIT License"
@@ -28,8 +28,7 @@
                       "lint"                 ["do" ["diagnostics"]  ["format"] ["clean-ns"]]
                       "lint-fix"             ["do" ["format-fix"] ["clean-ns-fix"]]}
             :resource-paths ["config", "resources"]
-            :jvm-opts ["-Dresource.config.edn=app-config.edn"
-                       "-Duser.timezone=America/Sao_Paulo"]
+            :jvm-opts ["-Duser.timezone=America/Sao_Paulo"]
             :profiles {:dev {:aliases {"run-dev"              ["trampoline" "run" "-m" "firma-analysis.server/run-dev"]
                                        "run-dev-w-migration"  ["trampoline" "run" "-m" "firma-analysis.server/run-dev-w-migration"]}
                              :plugins [[com.github.clojure-lsp/lein-clojure-lsp "1.3.17"]]

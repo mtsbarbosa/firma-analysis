@@ -10,18 +10,20 @@
 
               ::http/type :jetty
               ::http/port 8080
-              ::http/host (if (= :prod (keyword (or configs/env "dev")))
-                            "0.0.0.0"
-                            "localhost")
               ::http/container-options {:h2c? true
                                         :h2? false
                                         :ssl? false}})
 
-(defonce runnable-service (http/create-server service))
-
 (defn start
   []
-  (http/start runnable-service))
+  (println "server starting with env=" configs/env)
+  (println "SQL_DB_NAME=" (System/getenv "SQL_DB_NAME"))
+  (let [is-prod (= :prod (keyword (or configs/env "dev")))
+        _ (println "is-prod" is-prod)
+        built-service (if is-prod (assoc service
+                                    ::http/host "0.0.0.0")
+                                  service)]
+    (http/start (http/create-server built-service))))
 
 (defn start-dev
   []

@@ -1,8 +1,6 @@
 {
  firma-analysis.ports.sql.core/db-type                      "postgresql"
- firma-analysis.ports.sql.core/host                         #config/env "SQL_HOST"
- firma-analysis.ports.sql.core/port                         #config/env "SQL_PORT"
- firma-analysis.ports.sql.core/db-name                      #config/env "SQL_DB_NAME"
+ firma-analysis.ports.sql.core/url                          #config/env "SQL_URL"
  firma-analysis.ports.sql.core/username                     #config/env "SQL_USERNAME"
  firma-analysis.ports.sql.core/password                     #config/env "SQL_PWD"
  firma-analysis.configs/env                                 "prod"

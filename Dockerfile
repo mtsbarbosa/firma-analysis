@@ -5,4 +5,4 @@ ADD target/firma-analysis-0.0.1-SNAPSHOT-standalone.jar /firma-analysis/app.jar
 
 EXPOSE 8080
 
-CMD ["java", "-jar", "/firma-analysis/app.jar"]
+CMD ["java", "-Dresource.config.edn=prod-config.edn", "-jar", "/firma-analysis/app.jar"]
