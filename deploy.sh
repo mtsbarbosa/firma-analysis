@@ -1,7 +1,7 @@
 #!/bin/bash
 
 lein uberjar
-version="0.0.17"
+version="0.1.0"
 
 mv target/firma-analysis-$version-standalone.jar target/firma-analysis.jar
 

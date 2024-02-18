@@ -5,7 +5,7 @@
             [next.jdbc.prepare :as jdbc.prepare]
             [next.jdbc.result-set :as jdbc.result-set]
             [outpace.config :refer [defconfig]])
-  (:import (clojure.lang PersistentVector Var$Unbound)
+  (:import (clojure.lang LazySeq PersistentVector Var$Unbound)
            [java.sql
             Array
             Date
@@ -96,6 +96,9 @@
   (extend-protocol jdbc.prepare/SettableParameter
     PersistentVector
     (set-parameter [^PersistentVector v ^PreparedStatement ps ^long i]
+      (.setObject ps i (into-array v)))
+    LazySeq
+    (set-parameter [^LazySeq v ^PreparedStatement ps ^long i]
       (.setObject ps i (into-array v))))
   (extend-protocol jdbc.result-set/ReadableColumn
     Array

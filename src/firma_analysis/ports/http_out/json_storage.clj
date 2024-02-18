@@ -2,6 +2,7 @@
   (:require [clj-data-adapter.core :as data-adapter]
             [clojure.data.json :as cjson]
             [firma-analysis.adapters.events :as a.events]
+            [firma-analysis.adapters.availabilities :as a.availabilities]
             [firma-analysis.adapters.members :as a.members]
             [org.httpkit.client :as hk-client]
             [outpace.config :refer [defconfig]]))
@@ -29,8 +30,8 @@
         {:keys [events availabilities]} (-> @resp
                                             :body
                                             (cjson/read-str :key-fn data-adapter/snake-str->kebab-key))]
-    {:events/events (a.events/storage-> events)
-     :events/availabilitites availabilities}))
+    {:events/events          (a.events/storage-> events)
+     :events/availabilitites (a.availabilities/storage-> availabilities)}))
 
 (defn fetch-participation!
   []
